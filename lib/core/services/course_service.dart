@@ -37,7 +37,7 @@ class CourseService {
           .from('courses')
           .select('id, price')
           .eq('instructor_id', instructorId);
-      
+
       double totalEarnings = 0.0;
       int totalStudentsCount = 0;
 
@@ -45,12 +45,12 @@ class CourseService {
       for (final course in coursesResponse) {
         final String courseId = course['id'];
         final double price = double.tryParse(course['price']?.toString() ?? '0') ?? 0.0;
-        
+
         final List enrollmentsResponse = await _supabase
             .from('enrollments')
             .select('id')
             .eq('course_id', courseId);
-            
+
         final int count = enrollmentsResponse.length;
         totalStudentsCount += count;
         totalEarnings += (count * price);
@@ -75,24 +75,24 @@ class CourseService {
           .select('*')
           .eq('instructor_id', instructorId)
           .order('created_at', ascending: false);
-      
+
       final List<Map<String, dynamic>> results = [];
 
       // 2. For each course, fetch its specific enrollment count
       for (final json in coursesData) {
         final String courseId = json['id'];
-        
+
         final List enrollmentsData = await _supabase
             .from('enrollments')
             .select('id')
             .eq('course_id', courseId);
-            
+
         results.add({
           'course': Course.fromJson(json),
           'enrollment_count': enrollmentsData.length,
         });
       }
-      
+
       return results;
     } catch (e) {
       debugPrint("CourseService Error (getInstructorCoursesWithEnrollmentCount): $e");

@@ -427,18 +427,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   child: Column(
                     children: [
-                      _buildSettingsTile(
-                        Icons.support_agent, 
-                        _authService.currentUser?.email == 'abcd@gmail.com'
-                            ? "Support Dashboard" 
-                            : "Contact Support",
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (_) => const SupportTicketsScreen()),
-                          );
-                        },
-                      ),
                       const Divider(height: 1, indent: 56),
                       _buildSettingsTile(Icons.notifications, "Notifications"),
                       const Divider(height: 1, indent: 56),
