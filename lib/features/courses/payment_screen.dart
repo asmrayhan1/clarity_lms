@@ -240,7 +240,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                       style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18, color: Color(0xFF1E3A8A)),
                     ),
                     const SizedBox(height: 24),
-                    _buildSummaryRow("Course Price", "\$${price.toStringAsFixed(2)}"),
+                    _buildSummaryRow("Course Price", "${price.toStringAsFixed(2)} Tk"),
                     const Divider(height: 32, thickness: 1),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -250,7 +250,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                         ),
                         Text(
-                          "\$${price.toStringAsFixed(2)}", 
+                          "${price.toStringAsFixed(2)} Tk",
                           style: const TextStyle(
                             fontWeight: FontWeight.bold, 
                             fontSize: 26, 

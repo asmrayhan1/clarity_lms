@@ -256,11 +256,11 @@ class _CreateCourseScreenState extends State<CreateCourseScreen> {
                     onChanged: (v) => setState(() => _selectedCategory = v!),
                   ),
                   const SizedBox(height: 20),
-                  _buildLabel("Price (USD)"),
+                  _buildLabel("Price (Taka)"),
                   TextFormField(
                     controller: _priceController,
                     keyboardType: TextInputType.number,
-                    decoration: _inputDecoration("\$ 0.00"),
+                    decoration: _inputDecoration("0.00 Tk"),
                   ),
                 ],
               ),

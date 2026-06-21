@@ -228,7 +228,7 @@ class _InstructorHomeScreenState extends State<InstructorHomeScreen> {
 
               _buildVerticalStatCard(
                 title: "Total Earnings",
-                value: "\$${_stats['totalEarnings'].toStringAsFixed(2)}",
+                value: "${_stats['totalEarnings'].toStringAsFixed(2)} Tk",
                 badgeText: "+8.4% this month",
                 badgeColor: Colors.green,
                 icon: Icons.account_balance_wallet_rounded,

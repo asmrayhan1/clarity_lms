@@ -364,7 +364,7 @@ class _CourseListScreenState extends State<CourseListScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "\$${course.price.toStringAsFixed(2)}",
+                      "${course.price.toStringAsFixed(2)} Tk",
                       style: const TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,

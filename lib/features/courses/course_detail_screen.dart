@@ -245,9 +245,9 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                   const SizedBox(height: 8),
                   Row(
                     children: [
-                      Text("\$$price", style: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold)),
+                      Text("${price} Tk", style: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold)),
                       const SizedBox(width: 12),
-                      Text("\$${mainPrice.toStringAsFixed(2)}", style: TextStyle(fontSize: 16, color: Colors.black26, decoration: TextDecoration.lineThrough)),
+                      Text("${mainPrice.toStringAsFixed(2)} Tk", style: TextStyle(fontSize: 16, color: Colors.black26, decoration: TextDecoration.lineThrough)),
                     ],
                   ),
                   const SizedBox(height: 20),

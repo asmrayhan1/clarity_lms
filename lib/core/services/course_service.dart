@@ -123,15 +123,15 @@ class CourseService {
   // --- STORAGE ---
 
   Future<String> uploadVideo(Uint8List bytes, String fileName) async {
-    final path = 'videos/$fileName';
-    await _supabase.storage.from('course-content').uploadBinary(path, bytes);
-    return _supabase.storage.from('course-content').getPublicUrl(path);
+    final path = 'course_videos/$fileName';
+    await _supabase.storage.from('videos').uploadBinary(path, bytes);
+    return _supabase.storage.from('videos').getPublicUrl(path);
   }
 
   Future<String> uploadThumbnail(Uint8List bytes, String fileName) async {
     final path = 'thumbnails/$fileName';
-    await _supabase.storage.from('course-content').uploadBinary(path, bytes);
-    return _supabase.storage.from('course-content').getPublicUrl(path);
+    await _supabase.storage.from('images').uploadBinary(path, bytes);
+    return _supabase.storage.from('images').getPublicUrl(path);
   }
 
   // --- ENROLLMENT & PROGRESS ---
